@@ -7,23 +7,23 @@ require_relative 'models/init'
 
 class Server < Sinatra::Base
   get '/' do
-    handle = Handle.new
+    handle = Handler.new
     @comments = handle.getter
     haml :index
   end
 
-  get '/script.js' do
+  get '/js/script.js' do
     coffee :script
   end
 
   post '/' do
-    handle = Handle.new
+    handle = Handler.new
     @comments = handle.getter
     haml :index
   end
 
   post '/comment' do
-    handle = Handle.new
+    handle = Handler.new
     handle.writer(params[:comment])
     redirect '/'
   end

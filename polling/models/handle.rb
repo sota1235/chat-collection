@@ -5,7 +5,7 @@ class Handler
     f = open("./models/comments.txt", "r")
     res = ""
     f.each {|line|
-      res += "<p>"+ Time.now + " :" + CGI.escapeHTML(line) + "</p>"
+      res += "<p>"+ Time.now.to_s[0..-7] + " :" + CGI.escapeHTML(line) + "</p>"
     }
     f.close
     return res
