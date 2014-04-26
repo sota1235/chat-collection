@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sinatra/base'
 require 'haml'
 require 'coffee-script'
+require 'cgi'
 
 require_relative 'models/init'
 
@@ -15,7 +16,7 @@ class Server < Sinatra::Base
   post '/' do
     handle = Handler.new
     @comments = handle.getter
-    haml :index
+    haml :comment
   end
 
   post '/comment' do

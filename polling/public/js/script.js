@@ -4,10 +4,10 @@
 
   getDate = function() {
     return setInterval((function() {
-      return $.ajax({
+      return $('comment').html($.ajax({
         type: "POST",
-        url: "/comment"
-      });
+        url: "/"
+      }));
     }), 1000);
   };
 
