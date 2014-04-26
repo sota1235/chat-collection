@@ -3,6 +3,10 @@ require_once("./getter.php");
 
 $h = new Getter;
 $comments = $h -> get_comments();
+
+if(isset($_POST["comment"])) {
+  $h -> write_comments($_POST["comment"]);
+}
 ?>
 <html>
   <head>
@@ -12,8 +16,8 @@ $comments = $h -> get_comments();
   <head>
   <body>
     <div id="wrapper">
-      <form action="/submit" method="POST">
-        <input type="text" name="txt">
+      <form action="/index.php" method="POST">
+        <input type="text" name="comment">
         <input type="submit" value="発言">
       </form>
       <div id="comment">
