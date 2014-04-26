@@ -6,7 +6,7 @@ class Getter{
     $res = "";
     if($h){
       while (($b = fgets($h)) !== false){
-        $res .= "<p>".$b."</p><br />";
+        $res .= "<p>".$b."</p>";
       }
       return $res;
     } else {
@@ -16,7 +16,7 @@ class Getter{
 
   public function write_comments($comment) {
     $h = fopen("./data/comments.txt", "a");
-    fwrite($h, $comment);
+    fwrite($h, $comment."\n");
     return;
   }
 }
