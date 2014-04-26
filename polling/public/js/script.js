@@ -5,8 +5,10 @@ function getDate(){
 }
 
 $(function() {
+  $.ajax({cache: false});
+
   $("form").submit(function(){
-    $.post("/comment", {"comment": comment});
+    $.post("/comment", {"comment": form.name.comment});
   });
   window.onload = setInterval("getDate()", 1000);
 })
