@@ -17,7 +17,7 @@ $comments = $h -> get_comments();
         <input type="submit" value="発言">
       </form>
       <div id="comment">
-        <?php $comments ?>
+        <?php echo $comments; ?>
       </div>
     </div>
   </body>
