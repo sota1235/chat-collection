@@ -7,6 +7,8 @@ require_relative 'models/init'
 
 class Server < Sinatra::Base
   get '/' do
+    handle = Handle.new
+    @comments = handle.getter
     haml :index
   end
 
@@ -15,6 +17,14 @@ class Server < Sinatra::Base
   end
 
   post '/' do
+    handle = Handle.new
+    @comments = handle.getter
+    haml :index
+  end
 
+  post '/comment' do
+    handle = Handle.new
+    handle.writer(params[:comment])
+    redirect '/'
   end
 end
