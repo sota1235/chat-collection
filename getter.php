@@ -1,9 +1,8 @@
 <?php
 
 class Getter{
-  public $h = fopen("./data/comments.txt", "r+");
-
   public function get_comments() {
+    $h = fopen("./data/comments.txt", "r");
     $res = "";
     if($h){
       while (($b = fgets($h)) !== false){
@@ -15,4 +14,10 @@ class Getter{
     }
   }
 
+  public function write_comments($comment) {
+    $h = fopen("./data/comments.txt", "a");
+    fwrite($h, $comment);
+    return;
+  }
+}
 ?>
