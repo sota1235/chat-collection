@@ -1,6 +1,6 @@
 function getDate() {
   setInterval(function(){
-    $('#comments').load("comments.php");
+    $('#comment').load("comments.php");
   }, 1000);
 }
 
