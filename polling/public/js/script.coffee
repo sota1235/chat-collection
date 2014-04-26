@@ -1,8 +1,7 @@
 getDate = ->
   setInterval (->
-    $('comments').html $.ajax
-        type: "POST"
-        url: "/comment"
-  ), 1000
+    $.post "/", (data) ->
+      $('comments').html(data)
+    , 1000)
 
 window.onload = getDate
