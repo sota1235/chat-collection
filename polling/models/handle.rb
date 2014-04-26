@@ -12,7 +12,7 @@ class Handler
   end
 
   def writer(comment)
-    f = open("./models/comments.txt", "w")
+    f = open("./models/comments.txt", "a")
     f.write(comment)
     f.close
   end

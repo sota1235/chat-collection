@@ -12,10 +12,6 @@ class Server < Sinatra::Base
     haml :index
   end
 
-  get '/js/script.js' do
-    coffee :script
-  end
-
   post '/' do
     handle = Handler.new
     @comments = handle.getter
