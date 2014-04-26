@@ -1,4 +1,7 @@
-setInterval(function(){
+function getDate(){
   $.post("index.php");
-}, 500);
+}
 
+while(true){
+  setTimeout(getDate, 1000);
+}
