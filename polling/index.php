@@ -1,6 +1,8 @@
 <?php
-require_once("./get_comments");
-$comments = get_comments();
+require_once("./getter.php");
+
+$h = new Getter;
+$comments = $h -> get_comments();
 ?>
 <html>
   <head>
