@@ -1,7 +1,7 @@
-function getDate(){
-  $.post("index.php");
+function getDate() {
+  setInterval(function(){
+    $.post("index.php");
+  }, 1000);
 }
 
-while(true){
-  setTimeout(getDate, 1000);
-}
+window.onload = getDate();
