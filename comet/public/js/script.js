@@ -1,11 +1,24 @@
 function getData(){
+  $.get("/comments", function(data){
+    var lines = data['line'];
+    $("div#comments").html("");
+    lines.reverse();
+    for(var i=0;i<(lines.length < 10 ? line.length : 10);i++){
+      var main = $("<div>", {class: "data"});
+      var date = $("<span>", {class: "date"}).text(lines[i]["date"]);
+      var comment = $("<div>", {class: "comment"}).text(lines[i]["name"] + " : " + lines[i]["comment"]);
+      main.append(date);
+      main.append(comment);
+      $("div#comments").append(main);
+    }
+  });
+    /*
   $.ajax({
     url : "/comments",
-    async : false,
     success : function(data){
       if(data){
         var lines = data['line'];
-        $("div#comments").html("");
+        $("div#comments").html(data);
         lines.reverse();
         for(var i=0;i<lines.length;i++){
           var line = lines[i];
@@ -18,15 +31,11 @@ function getData(){
         }
       }
     },
-    error : function(req, stat, e){
-      setTimeout(getData(), 100000);
-    },
-    complete : function(e){
-    },
     type : "GET",
     dateType : "json",
     timeout : "600000"
   });
+  */
 }
 
 $(function() {
