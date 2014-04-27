@@ -28,6 +28,7 @@ $(function() {
       return;
     }
     $.post("/post", {"comment": comment});
+    $("input,text").not('input[type=\"submit\"]').val("");
     return false;
   });
   getData();
