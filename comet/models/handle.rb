@@ -17,7 +17,7 @@ class Handler
 
   def writer(name, comment)
     f = open("./models/comments.txt", "a")
-    f.write(name + "::" + Time.now.to_s[0..-7] + "::" + CGI.escapeHTML(comment) + "\n")
+    f.write(CGI.escapeHTML(name) + "::" + Time.now.to_s[0..-7] + "::" + CGI.escapeHTML(comment) + "\n")
     f.close
   end
 
