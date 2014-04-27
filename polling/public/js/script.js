@@ -5,9 +5,9 @@ function getData(){
     lines.reverse();
     for(var i=0;i<lines.length;i++){
       var line = lines[i];
-      var main = $("<div>", {class: "comment"});
+      var main = $("<div>", {class: "data"});
       var date = $("<span>", {class: "date"});
-      var comment = $("<span>", {class: "comment"});
+      var comment = $("<div>", {class: "comment"});
       date.text(line["date"]);
       comment.text(line["comment"]);
       main.append(date);
