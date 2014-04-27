@@ -1,7 +1,7 @@
 function getDate(){
   $.get("/comments", function(data){
-    var lines = data["line"];
-    $("#comment").html(lines);
+    var lines = data;
+    $("#comment").html(lines['line']);
     lines.reverse();
     for(var i=0;i<lines.length;i++){
       var lin = lines[i];
