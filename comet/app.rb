@@ -8,6 +8,8 @@ require 'cgi'
 require_relative 'models/init'
 
 class Server < Sinatra::Base
+  @time = true
+
   get '/' do
     haml :index
   end
@@ -15,7 +17,19 @@ class Server < Sinatra::Base
   # comments要素を返す
   get '/comments' do
     handle = Handler.new
-    comment = handle.getter
+    comment = nil
+    if @time then
+      @time = handle.get_timestamp
+      json handle.getter
+    else
+      loop do
+        unless @time == handle.get_timestamp then
+          comment = handle.getter
+          break
+        end
+        sleep 1
+      end
+    end
     json comment
   end
 
