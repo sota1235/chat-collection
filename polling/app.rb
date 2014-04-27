@@ -22,6 +22,5 @@ class Server < Sinatra::Base
   post '/post' do
     handle = Handler.new
     handle.writer(params[:comment])
-    redirect '/'
   end
 end
