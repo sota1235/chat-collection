@@ -20,4 +20,10 @@ class Handler
     f.write(Time.now.to_s[0..-7] + "::" + CGI.escapeHTML(comment) + "\n")
     f.close
   end
+
+  def get_timestamp
+    f = "./models/comments.txt"
+    s = File.stat(f)
+    return s.mtime
+  end
 end
