@@ -8,7 +8,7 @@ require 'cgi'
 require_relative 'models/init'
 
 class Server < Sinatra::Base
-  @time = true
+  @flat = true
 
   get '/' do
     haml :index
@@ -18,17 +18,13 @@ class Server < Sinatra::Base
   get '/comments' do
     handle = Handler.new
     comment = nil
-    if @time then
-      @time = handle.get_timestamp
-      json handle.getter
-    else
-      loop do
-        unless @time == handle.get_timestamp then
-          comment = handle.getter
-          break
-        end
-        sleep 1
+    loop do
+      if @flag then
+        comment = handle.getter
+        @flag = false
+        break
       end
+      sleep 1
     end
     json comment
   end
@@ -36,5 +32,6 @@ class Server < Sinatra::Base
   post '/post' do
     handle = Handler.new
     handle.writer(params[:name],params[:comment])
+    @flag = true
   end
 end
