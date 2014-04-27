@@ -1,6 +1,19 @@
 function getDate(){
   $.get("/comments", function(data){
-    $('#comment').html(data);
+    var lines = data["line"];
+    $("#comment").html(lines);
+    lines.reverse();
+    for(var i=0;i<lines.length;i++){
+      var lin = lines[i];
+      var main = $("<div>", {class: "comment"});
+      var date = $("<span>", {class: "date"});
+      var comment = $("<span>", {class: "comment"});
+      date.text(line["date"]);
+      comment.text(line["comment"]);
+      main.append(date);
+      main.append(comment);
+      $("div#comment").append(main);
+    }
   });
 }
 
