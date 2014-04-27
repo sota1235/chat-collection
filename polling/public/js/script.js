@@ -1,5 +1,5 @@
 function getDate(){
-  $.post("/", function(data){
+  $.get("/comments", function(data){
     $('#comment').html(data);
   });
 }
@@ -8,11 +8,12 @@ $(function() {
   $.ajax({cache: false});
 
   $("form").submit(function(){
-    console.log(this);
+    document.getElementById("comment").innnerHTML = this;
     var form = this;
     var comment = this.name.comment;
     console.log(comment);
     $.post("/comment", {"comment": comment});
   });
-  //window.onload = setInterval("getDate()", 1000);
+  getDate();
+  setInterval("getDate()", 1000);
 })
