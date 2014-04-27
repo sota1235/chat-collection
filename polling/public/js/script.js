@@ -1,4 +1,4 @@
-function getDate(){
+function getData(){
   $.get("/comments", function(data){
     var lines = data['line'];
     $("div#comments").html("");
@@ -22,10 +22,10 @@ $(function() {
 
   $("form").submit(function(){
     var form = this;
-    var comment = this.name.comment;
+    var comment = this.comment.value;
     $.post("/post", {"comment": comment});
     return false;
   });
-  getDate();
-  setInterval("getDate()", 1000);
-})
+  getData();
+  setInterval("getData()", 1000);
+});
