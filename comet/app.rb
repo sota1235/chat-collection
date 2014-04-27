@@ -35,6 +35,6 @@ class Server < Sinatra::Base
 
   post '/post' do
     handle = Handler.new
-    handle.writer(params[:comment])
+    handle.writer(params[:name],params[:comment])
   end
 end
