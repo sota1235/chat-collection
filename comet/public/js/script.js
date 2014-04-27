@@ -1,25 +1,31 @@
 function getData(){
   $.ajax({
-    type: "GET",
-    url: "/comments",
-    async: false,
-    dateType: "json",
-    timeout : 60000
-  }).done(function(data){
-    var lines = data['line'];
-    $("div#comments").html("");
-    lines.reverse();
-    for(var i=0;i<lines.length;i++){
-      var line = lines[i];
-      var main = $("<div>", {class: "data"});
-      var date = $("<span>", {class: "date"});
-      var comment = $("<div>", {class: "comment"});
-      date.text(line["date"]);
-      comment.text(line["comment"]);
-      main.append(date);
-      main.append(comment);
-      $("div#comments").append(main);
-    }
+    url : "/comments",
+    async : false,
+    success : function(data){
+      if(data){
+        var lines = data['line'];
+        $("div#comments").html("");
+        lines.reverse();
+        for(var i=0;i<lines.length;i++){
+          var line = lines[i];
+          var main = $("<div>", {class: "data"});
+          var date = $("<span>", {class: "date"}).text(line["date"]);
+          var comment = $("<div>", {class: "comment"}).text(line["name"] + " : " + line["comment"]);
+          main.append(date);
+          main.append(comment);
+          $("div#comments").append(main);
+        }
+      }
+    },
+    error : function(req, stat, e){
+      setTimeout(getData(), 100000);
+    },
+    complete : function(e){
+    },
+    type : "GET",
+    dateType : "json",
+    timeout : "600000"
   });
 }
 
