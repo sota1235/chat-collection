@@ -19,12 +19,6 @@ class Server < Sinatra::Base
     json comment
   end
 
-  post '/' do
-    handle = Handler.new
-    @comments = handle.getter
-    haml :comment
-  end
-
   post '/comment' do
     handle = Handler.new
     handle.writer(params[:comment])
