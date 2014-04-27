@@ -4,10 +4,13 @@ require 'json'
 class Handler
   def getter
     f = open("./models/comments.txt", "r")
-    res = {}
+    res = Array.new
     f.each {|line|
       tmp = line.split("::")
-      res[tmp[0]] = tmp[1]
+      obj = Hash.new
+      obj['date'] = tmp[0]
+      obj['comment'] = tmp[1]
+      res.push(obj)
     }
     f.close
     return res.to_json
