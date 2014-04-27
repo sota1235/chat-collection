@@ -24,6 +24,7 @@ $(function() {
     var form = this;
     var comment = this.name.comment;
     $.post("/post", {"comment": comment});
+    return false;
   });
   getDate();
   setInterval("getDate()", 1000);
