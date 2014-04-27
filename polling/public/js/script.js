@@ -23,6 +23,10 @@ $(function() {
   $("form").submit(function(){
     var form = this;
     var comment = this.comment.value;
+    if(comment === "") {
+      alert("無言はなしですよ");
+      return;
+    }
     $.post("/post", {"comment": comment});
     return false;
   });
