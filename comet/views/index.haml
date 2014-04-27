@@ -8,9 +8,8 @@
     %script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
     %script(src="js/script.js")
   %body
-    #container
-      %form
-        %input(type="text" name="name" value="ななしさん")
-        %input(type="text" name="comment" placeholder="今どんな気持ち？")
-        %input(type="submit" value="つぶやく" id="send")
-      #comments
+    %div#chat
+      %input(type="text" id="name" value="ななしさん")
+      %input(type="text" id="comment" placeholder="今どんな気持ち？")
+      %input(type="button" value="つぶやく" id="send")
+    %div#comments

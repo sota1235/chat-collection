@@ -1,5 +1,11 @@
 function getData(){
-  $.get("/comments", function(data){
+  $.ajax({
+    type: "GET",
+    url: "/comments",
+    async: false,
+    dateType: "json",
+    timeout : 60000
+  }).done(function(data){
     var lines = data['line'];
     $("div#comments").html("");
     lines.reverse();
@@ -20,10 +26,9 @@ function getData(){
 $(function() {
   $.ajax({cache: false});
 
-  $("form").submit(function(){
-    var form = this;
-    var comment = this.comment.value;
-    var name = this.name.value;
+  $("#chat #send").click(function(){
+    var name = $("#chat #name").val();
+    var comment = $("#chat #comment").val();
     if(comment === "") {
       alert("無言はなしですよ");
       return;
