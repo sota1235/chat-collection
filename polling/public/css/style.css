@@ -19,8 +19,9 @@ body {
 }
 
 input#send {
-  width: 100px;
-  height: 60px;
+  width: 80px;
+  height: 25px;
+  font-size: 12px;
   background-color: #5A8CE2;
   color: #fff;
   border-style: none;
