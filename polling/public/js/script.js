@@ -21,11 +21,9 @@ $(function() {
   $.ajax({cache: false});
 
   $("form").submit(function(){
-    document.getElementById("comment").innnerHTML = this;
     var form = this;
     var comment = this.name.comment;
-    console.log(comment);
-    $.post("/comment", {"comment": comment});
+    $.post("/post", {"comment": comment});
   });
   getDate();
   setInterval("getDate()", 1000);

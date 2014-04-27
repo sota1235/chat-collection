@@ -19,7 +19,7 @@ class Server < Sinatra::Base
     json comment
   end
 
-  post '/comment' do
+  post '/post' do
     handle = Handler.new
     handle.writer(params[:comment])
     redirect '/'
