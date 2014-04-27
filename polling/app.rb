@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/base'
+require 'sinatra/json'
 require 'haml'
 require 'coffee-script'
 require 'cgi'
@@ -14,8 +15,8 @@ class Server < Sinatra::Base
   # comments要素を返す
   get '/comments' do
     handle = Handler.new
-    @comments = handle.getter
-    haml :comment
+    comment = handle.getter
+    json comment
   end
 
   post '/' do

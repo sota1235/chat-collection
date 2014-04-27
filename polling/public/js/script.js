@@ -1,10 +1,10 @@
 function getDate(){
   $.get("/comments", function(data){
-    var lines = data;
-    $("#comment").html(lines['line']);
+    var lines = data['line'];
+    $("#comment").html(data);
     lines.reverse();
     for(var i=0;i<lines.length;i++){
-      var lin = lines[i];
+      var line = lines[i];
       var main = $("<div>", {class: "comment"});
       var date = $("<span>", {class: "date"});
       var comment = $("<span>", {class: "comment"});

@@ -8,11 +8,11 @@ class Handler
     res2 = Hash.new
     f.each {|line|
       tmp = line.split("::")
-      res.push({"date" => tmp[0], "comment" => tmp[1]})
+      res.push({"date" => tmp[0], "comment" => tmp[1].sub("\n", "")})
     }
     f.close
     res2['line'] = res
-    return JSON.generate(res2)
+    return res2
   end
 
   def writer(comment)
