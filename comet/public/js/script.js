@@ -34,7 +34,7 @@ $(function() {
       return;
     }
     $.post("/post", {"name": name, "comment": comment});
-    $("input,text").not('input[type=\"submit\"],input[name=\"name\"]').val("");
+    $("input,text").not('input[type=\"button\"],input[id=\"name\"]').val("");
     return false;
   });
   getData();
