@@ -23,11 +23,12 @@ $(function() {
   $("form").submit(function(){
     var form = this;
     var comment = this.comment.value;
+    var name = this.name.value;
     if(comment === "") {
       alert("無言はなしですよ");
       return;
     }
-    $.post("/post", {"comment": comment});
+    $.post("/post", {"name": name, "comment": comment});
     $("input,text").not('input[type=\"submit\"]').val("");
     return false;
   });
