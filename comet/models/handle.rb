@@ -8,16 +8,16 @@ class Handler
     res2 = Hash.new
     f.each {|line|
       tmp = line.split("::")
-      res.push({"date" => tmp[0], "comment" => tmp[1].sub("\n", "")})
+      res.push({"name" => tmp[0], "date" => tmp[1], "comment" => tmp[2].sub("\n", "")})
     }
     f.close
     res2['line'] = res
     return res2
   end
 
-  def writer(comment)
+  def writer(name, comment)
     f = open("./models/comments.txt", "a")
-    f.write(Time.now.to_s[0..-7] + "::" + CGI.escapeHTML(comment) + "\n")
+    f.write(name + "::" + Time.now.to_s[0..-7] + "::" + CGI.escapeHTML(comment) + "\n")
     f.close
   end
 
