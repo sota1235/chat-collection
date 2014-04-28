@@ -26,6 +26,7 @@ class Server < Sinatra::Base
         break if @@flag
         sleep 1
       end
+      @@flag = false
       s << comment
     end
   end
