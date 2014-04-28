@@ -8,10 +8,11 @@ require 'cgi'
 
 require_relative 'models/init'
 
-@@flag = true
 Log = Logger.new('app.log')
 
 class Server < Sinatra::Base
+  @@flag = true
+
   get '/' do
     haml :index
   end
@@ -19,13 +20,13 @@ class Server < Sinatra::Base
   # comments要素を返す
   get '/comments' do
     handle = Handler.new
-    comment = handle.getter
+    comment = JSON.generate(handle.getter)
     stream do |s|
       loop do
         break if @@flag
         sleep 1
       end
-      json comment
+      s << comment
     end
   end
 
