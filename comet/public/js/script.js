@@ -13,7 +13,9 @@ function insertData(data) {
 }
 
 function getData(){
-  $.get("/comments", insertData(data));
+  $.get("/comments", function(data){
+    insertData(data);
+  });
     /*
   $.ajax({
     url : "/comments",
@@ -50,7 +52,9 @@ $(function() {
       alert("無言はなしですよ");
       return;
     }
-    $.post("/post", {"name": name, "comment": comment}, insertData(data));
+    $.post("/post", {"name": name, "comment": comment}, function(data){
+      insertData(data);
+    });
     $("input,text").not('input[type=\"button\"],input[id=\"name\"]').val("");
     return false;
   });
