@@ -1,1 +1,9 @@
 # Logfile created on 2014-04-28 14:49:04 +0900 by logger.rb/44203
+I, [2014-04-28T18:45:33.618731 #92554]  INFO -- : get /comments:true
+I, [2014-04-28T18:45:34.615001 #92554]  INFO -- : get /comments:false
+I, [2014-04-28T18:45:37.733071 #92554]  INFO -- : get /:false
+I, [2014-04-28T18:45:38.008503 #92554]  INFO -- : get /:false
+I, [2014-04-28T18:45:50.070538 #92554]  INFO -- : post /post:false
+I, [2014-04-28T18:45:50.635546 #92554]  INFO -- : get /comments:false
+I, [2014-04-28T18:46:02.461330 #92554]  INFO -- : post /post:false
+I, [2014-04-28T18:46:02.652334 #92554]  INFO -- : get /comments:false

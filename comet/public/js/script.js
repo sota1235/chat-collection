@@ -2,7 +2,6 @@ function getData(){
   $.get("/comments", function(data){
     var json = $.parseJSON(data);
     var lines = json.line;
-    $("div#comments").html(lines);
     lines.reverse();
     for(var i=0;i<(lines.length < 10 ? line.length : 10);i++){
       var main = $("<div>", {class: "data"});
