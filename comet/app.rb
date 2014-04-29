@@ -11,10 +11,11 @@ require_relative 'models/init'
 Log = Logger.new('app.log')
 
 class Server < Sinatra::Base
-  @@flag = true
+  @@flag = nil
 
   get '/' do
     Log.info("get /:" + @@flag.to_s)
+    @@flag = true
     haml :index
   end
 
