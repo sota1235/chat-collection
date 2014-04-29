@@ -1,4 +1,6 @@
-function insertData(data) {
+var ajax = new Ajax('/comments');
+
+ajax.on_get = function(data) {
   var json = $.parseJSON(data);
   var lines = json.line;
   lines.reverse();
@@ -7,31 +9,22 @@ function insertData(data) {
     $("<span>", {class: "date"}).text(lines[i]["date"]).appendTo(main);
     $("<div>", {class: "comment"}).text(lines[i]["name"] + " : " + lines[i]["comment"]).appendTo(main);
     $("div#comments").append(main);
-  }
-}
+  };
+};
 
-function getData(){
-  $.get("/comments", function(data){
-    insertData(data);
-  });
-}
+var post = function(){
+  var name = $("#chat #name").val();
+  var comment = $("#chat #name").val();
+  if(comment.length < 1) {
+    alert("無言はなしよ");
+    return;
+  };
+  ajax.post({"name": name, "comment": comment});
+  $("input,text").not('input[type="button"],input[id="name"]').val('');
+  return false;
+};
 
 $(function() {
-  $.ajax({cache: false});
-
-  $("#chat #send").click(function(){
-    var name = $("#chat #name").val();
-    var comment = $("#chat #comment").val();
-    if(comment === "") {
-      alert("無言はなしですよ");
-      return;
-    }
-    $.post("/post", {"name": name, "comment": comment}, function(data){
-      insertData(data);
-    });
-    $("input,text").not('input[type=\"button\"],input[id=\"name\"]').val("");
-    return false;
-  });
-  getData();
-  setInterval("getData()", 1000);
+  ajax.start();
+  $("#chat #send").click(post);
 });
