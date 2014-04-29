@@ -1,31 +1,64 @@
 # Logfile created on 2014-04-28 14:49:04 +0900 by logger.rb/44203
-I, [2014-04-28T18:45:33.618731 #92554]  INFO -- : get /comments:true
-I, [2014-04-28T18:45:34.615001 #92554]  INFO -- : get /comments:false
-I, [2014-04-28T18:45:37.733071 #92554]  INFO -- : get /:false
-I, [2014-04-28T18:45:38.008503 #92554]  INFO -- : get /:false
-I, [2014-04-28T18:45:50.070538 #92554]  INFO -- : post /post:false
-I, [2014-04-28T18:45:50.635546 #92554]  INFO -- : get /comments:false
-I, [2014-04-28T18:46:02.461330 #92554]  INFO -- : post /post:false
-I, [2014-04-28T18:46:02.652334 #92554]  INFO -- : get /comments:false
-I, [2014-04-28T18:53:41.003730 #97255]  INFO -- : get /comments:true
-I, [2014-04-28T18:53:41.226188 #97255]  INFO -- : get /comments:false
-I, [2014-04-28T18:53:46.068515 #97255]  INFO -- : get /:false
-I, [2014-04-28T18:53:46.366275 #97255]  INFO -- : get /:false
-I, [2014-04-28T18:55:07.340400 #97950]  INFO -- : get /comments:true
-I, [2014-04-28T18:55:08.336762 #97950]  INFO -- : get /comments:false
-I, [2014-04-28T18:55:09.648639 #97950]  INFO -- : get /:false
-I, [2014-04-28T18:55:10.074951 #97950]  INFO -- : get /:false
-I, [2014-04-28T18:56:49.460734 #99243]  INFO -- : get /comments:true
-I, [2014-04-28T18:56:50.449440 #99243]  INFO -- : get /comments:false
-I, [2014-04-28T18:56:53.102399 #99243]  INFO -- : get /:false
-I, [2014-04-28T18:56:53.456442 #99243]  INFO -- : get /:false
-I, [2014-04-28T18:58:12.552601 #666]  INFO -- : get /comments:true
-I, [2014-04-28T18:58:13.551338 #666]  INFO -- : get /comments:false
-I, [2014-04-28T18:58:14.354053 #666]  INFO -- : get /:false
-I, [2014-04-28T18:58:14.687896 #666]  INFO -- : get /:false
-I, [2014-04-28T18:58:16.021327 #666]  INFO -- : get /:false
-I, [2014-04-28T18:58:16.238196 #666]  INFO -- : get /:false
-I, [2014-04-28T18:58:20.917963 #666]  INFO -- : post /post:false
-I, [2014-04-28T18:58:21.563215 #666]  INFO -- : get /comments:false
-I, [2014-04-28T18:58:25.462790 #666]  INFO -- : post /post:false
-I, [2014-04-28T18:58:25.570971 #666]  INFO -- : get /comments:false
+I, [2014-04-29T15:06:49.416813 #8948]  INFO -- : get /comments:true
+I, [2014-04-29T15:06:49.437673 #8948]  INFO -- : get /comments break:true
+I, [2014-04-29T15:06:50.406350 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:06:55.068304 #8948]  INFO -- : get /:false
+I, [2014-04-29T15:06:55.438126 #8948]  INFO -- : get /:false
+I, [2014-04-29T15:06:55.706807 #8948]  INFO -- : get /:false
+I, [2014-04-29T15:07:20.511498 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:07:54.987273 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:08:25.083422 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:08:31.512993 #8948]  INFO -- : post /post:false
+I, [2014-04-29T15:08:31.584588 #8948]  INFO -- : get /comments break:true
+I, [2014-04-29T15:08:55.255041 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:09:15.193281 #8948]  INFO -- : get /:false
+I, [2014-04-29T15:09:15.526295 #8948]  INFO -- : get /:false
+I, [2014-04-29T15:09:15.792908 #8948]  INFO -- : get /:false
+I, [2014-04-29T15:09:31.785709 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:09:33.951314 #8948]  INFO -- : post /post:false
+I, [2014-04-29T15:09:34.088452 #8948]  INFO -- : get /comments break:true
+I, [2014-04-29T15:10:15.204973 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:10:43.349743 #8948]  INFO -- : post /post:false
+I, [2014-04-29T15:10:43.362726 #8948]  INFO -- : get /comments break:true
+I, [2014-04-29T15:10:45.366120 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:11:25.676326 #8948]  INFO -- : post /post:false
+I, [2014-04-29T15:11:25.697574 #8948]  INFO -- : get /comments break:true
+I, [2014-04-29T15:11:43.615722 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:12:25.913523 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:12:56.035540 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:13:26.142757 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:13:56.262552 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:14:26.397666 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:14:56.508698 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:15:26.630898 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:15:56.746599 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:16:26.859815 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:16:56.980466 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:17:27.106798 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:17:57.243592 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:18:27.367796 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:18:57.492584 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:19:27.619481 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:19:57.738784 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:20:27.856838 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:20:57.981519 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:21:28.099961 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:21:58.218382 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:22:28.339796 #8948]  INFO -- : get /comments:false
+I, [2014-04-29T15:25:33.999569 #13268]  INFO -- : get /comments:true
+I, [2014-04-29T15:25:34.016860 #13268]  INFO -- : get /comments break:true
+I, [2014-04-29T15:25:34.214969 #13268]  INFO -- : get /comments:false
+I, [2014-04-29T15:25:36.017415 #13268]  INFO -- : get /comments:false
+I, [2014-04-29T15:25:36.019443 #13268]  INFO -- : get /:false
+I, [2014-04-29T15:25:36.513716 #13268]  INFO -- : get /:false
+I, [2014-04-29T15:25:37.913177 #13268]  INFO -- : get /comments:false
+I, [2014-04-29T15:25:37.915419 #13268]  INFO -- : get /:false
+I, [2014-04-29T15:25:38.207683 #13268]  INFO -- : get /:false
+I, [2014-04-29T15:25:41.534087 #13268]  INFO -- : post /post:false
+I, [2014-04-29T15:25:41.925399 #13268]  INFO -- : get /comments break:true
+I, [2014-04-29T15:25:41.929208 #13268]  INFO -- : get /comments:false
+I, [2014-04-29T15:25:48.014859 #13268]  INFO -- : post /post:false
+I, [2014-04-29T15:25:48.036487 #13268]  INFO -- : get /comments break:true
+I, [2014-04-29T15:25:52.945521 #13268]  INFO -- : post /post:false
+I, [2014-04-29T15:25:52.952091 #13268]  INFO -- : get /comments break:true
+I, [2014-04-29T15:25:52.958010 #13268]  INFO -- : get /comments:false

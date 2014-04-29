@@ -28,6 +28,7 @@ class Server < Sinatra::Base
         break if @@flag
         sleep 1
       end
+      Log.info("get /comments break:" + @@flag.to_s)
       @@flag = false
       s << comment
     end
