@@ -23,13 +23,13 @@ class Server < Sinatra::Base
   get '/comments' do
     Log.info("get /comments:" + @@flag.to_s)
     handle = Handler.new
-    comment = JSON.generate(handle.getter)
     stream do |s|
       loop do
         break if @@flag
         sleep 1
       end
       Log.info("get /comments break:" + @@flag.to_s)
+      comment = JSON.generate(handle.getter)
       @@flag = false
       s << comment
     end
