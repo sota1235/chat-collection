@@ -34,8 +34,8 @@ class Server < Sinatra::Base
     end
   end
 
-  post '/post' do
-    Log.info("post /post:" + @@flag.to_s)
+  post '/comments' do
+    Log.info("post /comments:" + @@flag.to_s)
     @@flag = true
     handle = Handler.new
     handle.writer(params[:name],params[:comment])
