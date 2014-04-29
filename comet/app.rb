@@ -39,6 +39,5 @@ class Server < Sinatra::Base
     @@flag = true
     handle = Handler.new
     handle.writer(params[:name],params[:comment])
-    JSON.generate(handle.getter)
   end
 end

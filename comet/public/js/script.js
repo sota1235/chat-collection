@@ -14,7 +14,7 @@ ajax.on_get = function(data) {
 
 var post = function(){
   var name = $("#chat #name").val();
-  var comment = $("#chat #name").val();
+  var comment = $("#chat #comment").val();
   if(comment.length < 1) {
     alert("無言はなしよ");
     return;

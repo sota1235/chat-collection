@@ -1,29 +1,30 @@
 var Ajax = function(url) {
   this.url = url;
+  var self = this;
 
   // インスタンス生成後,オーバライド
   this.on_get = null;
 
   this.start = function() {
-    this.get();
+    self.get();
   };
 
   this.post = function(param){
-    $.post(this.url, param, this.on_get(data));
+    $.post(self.url, param);
   };
 
   this.get = function() {
     $.ajax(
         {
-          url : this.url,
+          url : self.url,
           success : function(data) {
             if(data) {
-              if(this.on_get && typeof this.on_get == 'function') this.on_get(data);
+              if(self.on_get && typeof self.on_get == 'function') self.on_get(data);
             };
-            this.get();
+            self.get();
           },
           error : function(req, stat, e) {
-            setTimeout(this.get, 10000);
+            setTimeout(self.get, 10000);
           },
           complete : function(e){
           },
