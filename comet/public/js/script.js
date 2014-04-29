@@ -4,7 +4,7 @@ ajax.on_get = function(data) {
   var json = $.parseJSON(data);
   var lines = json.line;
   lines.reverse();
-  for(var i=0;i<(lines.length < 10 ? line.length : 10);i++) {
+  for(var i=0;i<(lines.length < 10 ? lines.length : 10);i++) {
     var main = $("<div>", {class: "data"});
     $("<span>", {class: "date"}).text(lines[i]["date"]).appendTo(main);
     $("<div>", {class: "comment"}).text(lines[i]["name"] + " : " + lines[i]["comment"]).appendTo(main);
