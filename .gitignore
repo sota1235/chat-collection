@@ -3,4 +3,4 @@
 *.swp
 Gemfile.lock
 comments.txt
-app.log
+comet/app.log
