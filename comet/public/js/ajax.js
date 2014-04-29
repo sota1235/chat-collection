@@ -4,7 +4,7 @@ var Ajax = function(url) {
   // インスタンス生成後,オーバライド
   this.on_get = null;
 
-  this.start() {
+  this.start = function() {
     this.get();
   };
 
@@ -19,7 +19,7 @@ var Ajax = function(url) {
           success : function(data) {
             if(data) {
               if(this.on_get && typeof this.on_get == 'function') this.on_get(data);
-            }
+            };
             this.get();
           },
           error : function(req, stat, e) {
@@ -29,7 +29,6 @@ var Ajax = function(url) {
           },
           type : 'GET',
           timeout : 60000
-        }
-        );
+        });
   };
 };
