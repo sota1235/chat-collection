@@ -1,9 +1,8 @@
 var ajax = new Ajax('/comments');
 
 ajax.on_get = function(data) {
-  var json = $.parseJSON(data);
-  var lines = json.line;
-  lines.reverse();
+  var lines = $.parseJSON(data).line.reverse();
+  $("div#comments").html("");
   for(var i=0;i<(lines.length < 10 ? lines.length : 10);i++) {
     var main = $("<div>", {class: "data"});
     $("<span>", {class: "date"}).text(lines[i]["date"]).appendTo(main);
