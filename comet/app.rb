@@ -31,7 +31,10 @@ class Server < Sinatra::Base
     stream do |s|
       loop do
         t = @@handle.get_timestamp
-        break if @@time != t
+        if @@time != t then
+          @@time = t
+          break
+        end
         sleep 1
       end
       Log.info("get '/comments break'")
