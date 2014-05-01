@@ -25,5 +25,6 @@ var post = function(){
 
 $(function() {
   ajax.start();
+  ajax.on_get($.get('/first_comments'));
   $("#chat #send").click(post);
 });
