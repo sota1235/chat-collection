@@ -11,34 +11,37 @@ require_relative 'models/init'
 Log = Logger.new('app.log')
 
 class Server < Sinatra::Base
-  @@flag = nil
+  @@handle = Handler.new
+  @@time = @@handle.get_timestamp
 
   get '/' do
-    Log.info("get /:" + @@flag.to_s)
-    @@flag = true
+    Log.info("get '/'")
     haml :index
   end
 
-  # comments要素を返す
+  # return comments when GET '/' request
+  get '/first_comments' do
+    Log.info("get '/first_comments'")
+    JSON.generate(@@handle.getter)
+  end
+
+  # return comments
   get '/comments' do
-    Log.info("get /comments:" + @@flag.to_s)
-    handle = Handler.new
+    Log.info("get '/comments'")
     stream do |s|
       loop do
-        break if @@flag
+        t = @@handle.get_timestamp
+        break if @@time != t
         sleep 1
       end
-      Log.info("get /comments break:" + @@flag.to_s)
-      comment = JSON.generate(handle.getter)
-      @@flag = false
+      Log.info("get '/comments break'")
+      comment = JSON.generate(@@handle.getter)
       s << comment
     end
   end
 
   post '/comments' do
-    Log.info("post /comments:" + @@flag.to_s)
-    @@flag = true
-    handle = Handler.new
-    handle.writer(params[:name],params[:comment])
+    Log.info("post '/comments'")
+    @@handle.writer(params[:name],params[:comment])
   end
 end
