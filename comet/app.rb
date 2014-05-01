@@ -30,7 +30,6 @@ class Server < Sinatra::Base
       loop do
         t = @@handle.get_timestamp
         if @@time != t then
-          @@time = t
           break
         end
         sleep 1
@@ -43,6 +42,7 @@ class Server < Sinatra::Base
 
   post '/comments' do
     Log.info("post '/comments'")
+    @@time = @@handle.get_timestamp
     @@handle.writer(params[:name],params[:comment])
   end
 end
