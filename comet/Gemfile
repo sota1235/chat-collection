@@ -3,7 +3,5 @@ source :rubygems
 ruby '2.1.1'
 gem 'sinatra'
 gem 'sinatra-contrib'
-gem 'sinatra-stream'
 gem 'haml'
 gem 'logger'
-gem 'cgi'

@@ -1,10 +1,8 @@
 require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/json'
-require 'sinatra/streaming'
 require 'logger'
 require 'haml'
-require 'cgi'
 
 require_relative 'models/init'
 
