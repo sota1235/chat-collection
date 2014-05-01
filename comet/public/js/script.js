@@ -1,6 +1,6 @@
 var ajax = new Ajax('/comments');
 
-ajax.on_get = function(data) {
+var insert_json = function(data) {
   var lines = $.parseJSON(data).line.reverse();
   $("div#comments").html("");
   for(var i=0;i<(lines.length < 10 ? lines.length : 10);i++) {
@@ -10,6 +10,8 @@ ajax.on_get = function(data) {
     $("div#comments").append(main);
   };
 };
+
+ajax.on_get = insert_json;
 
 var post = function(){
   var name = $("#chat #name").val();
@@ -24,7 +26,10 @@ var post = function(){
 };
 
 $(function() {
+  var json = "";
   ajax.start();
-  ajax.on_get($.get('/first_comments'));
+  $.get('/first_comments', function(data){
+    insert_json(data);
+  });
   $("#chat #send").click(post);
 });
