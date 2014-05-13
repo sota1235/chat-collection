@@ -14,39 +14,32 @@ class Server < Sinatra::Base
   @@c = 0
 
   get '/' do
-    Log.info("get '/': " + @@time.to_s)
     haml :index
   end
 
   # return comments when GET '/' request
   get '/first_comments' do
-    Log.info("get '/first_comments': " + @@time.to_s)
     JSON.generate(@@handle.getter)
   end
 
   # return comments
   get '/comments' do
-    Log.info("get '/comments': " + @@time.to_s)
     t = @@handle.get_timestamp
-    stream do |s|
-      loop do
-        #if @@time != t then
-        if @@c > 0 then
-          @@c -= 1
-          break
-        end
-        sleep 1
+    Log.info("get /comments")
+    loop do
+      #if @@time != t then
+      if t != @@time then
+        break
       end
-      Log.info("get '/comments break': " + @@time.to_s + " : " + t.to_s)
-      comment = JSON.generate(@@handle.getter)
-      s << comment
+      sleep 1
     end
+    Log.info("get /comments : break")
+    comment = JSON.generate(@@handle.getter)
+    comment
   end
 
   post '/comments' do
-    Log.info("post '/comments': " + @@time.to_s)
     @@handle.writer(params[:name],params[:comment])
-    @@c += 1
     @@time = @@handle.get_timestamp
   end
 end
