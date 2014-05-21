@@ -2,4 +2,9 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  body
+    div#chat
+      input(type='text',id='name',value='ななしさん')
+      input(type='text',id='comment',placeholder='今どんな気持ち？')
+      input(type='button',value='つぶやく',id='send')
+    div#comments
