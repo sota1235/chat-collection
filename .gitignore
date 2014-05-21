@@ -4,3 +4,4 @@
 Gemfile.lock
 comments.txt
 comet/app.log
+websocket/node_modules
