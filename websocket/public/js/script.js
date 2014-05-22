@@ -8,8 +8,9 @@
     });
     $('input:button').click(function() {
       var msg;
-      msg = [$('#name'), $('#comment')];
+      msg = [$('#name').val(), $('#comment').val()];
       console.log(msg[0] + msg[1]);
+      $('#comment').val('');
       return socket.emit('msg send', JSON.stringify(msg));
     });
     socket.on('msg push', function(msg) {

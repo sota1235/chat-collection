@@ -4,8 +4,9 @@ $ ->
     console.log 'connected'
 
   $('input:button').click ->
-    msg = [$('#name'), $('#comment')]
+    msg = [$('#name').val(), $('#comment').val()]
     console.log msg[0] + msg[1]
+    $('#comment').val ''
     socket.emit 'msg send', JSON.stringify msg
 
   socket.on 'msg push', (msg) ->
