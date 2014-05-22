@@ -6,10 +6,11 @@ $ ->
   $('input:button').click ->
     msg = [$('#name'), $('#comment')]
     console.log msg[0] + msg[1]
-    socket.emit 'msg send', msg.val()
+    socket.emit 'msg send', JSON.stringify msg
 
   socket.on 'msg push', (msg) ->
-    console.log msg[0] + msg[1]
+    msg = JSON.parse(msg)
+    console.log msg
     date = new Date()
     main = $('<div>', {class: 'data')
     $('<span>', {class: 'date'}).text(date).appendTo main
