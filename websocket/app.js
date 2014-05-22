@@ -37,15 +37,15 @@ Module dependencies.
 
   app.use(express["static"](path.join(__dirname, "public")));
 
-  if ("development" === app.get("env")) {
-    app.use(express.errorHandler());
-  }
-
   app.get("/", routes.index);
 
   server = http.createServer(app).listen(app.get("port"), function() {
     return console.log("Express server listening on port " + app.get("port"));
   });
+
+  if ('development' === app.get('env')) {
+    app.use(express.errorHandler());
+  }
 
   io = require('socket.io').listen(server);
 
