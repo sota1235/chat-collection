@@ -5,7 +5,7 @@ Module dependencies.
 
 
 (function() {
-  var app, express, http, io, path, routes, user;
+  var app, express, http, io, path, routes, server, user;
 
   express = require("express");
 
@@ -43,11 +43,11 @@ Module dependencies.
 
   app.get("/", routes.index);
 
-  http.createServer(app).listen(app.get("port"), function() {
+  server = http.createServer(app).listen(app.get("port"), function() {
     return console.log("Express server listening on port " + app.get("port"));
   });
 
-  io = require('socket.io').listen(app);
+  io = require('socket.io').listen(server);
 
   io.sockets.on('connection', function(socket) {
     socket.on('msg send', function(msg) {
