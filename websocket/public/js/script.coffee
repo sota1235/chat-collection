@@ -12,7 +12,7 @@ $ ->
     msg = JSON.parse(msg)
     console.log msg
     date = new Date()
-    main = $('<div>', {class: 'data')
+    main = $('<div>', {class: 'data'})
     $('<span>', {class: 'date'}).text(date).appendTo main
     $('<div>', {class: 'comment'}).text(msg[0] + ' : ' + msg[1]).appendTo main
     $('#comments').prepend main
